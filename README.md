@@ -12,9 +12,50 @@
     </p>
     
 <h3>Como Funciona:</h3>
-    <p>
-        
-    </p>
+- Crie um ambiente virtual
+```
+python -m venv venv
+```
+
+- Ative o ambiente virtual
+```
+source venv/bin/activate
+```
+
+- instale as dependências
+```
+pip install -r requirements.txt
+```
+
+- Entre na pasta apps/
+```
+cd apps/
+```
+
+- excute as migrations
+```
+python manage.py migrate
+```
+
+- Crie um usuario admin
+```
+python manage.py createsuperuser --email admin@admin.com --username admin
+```
+
+- Crie sua senha
+```
+******
+```
+
+- Repita a senha
+```
+******
+```
+
+- Excute o projeto localmente, Fim.
+```
+python manage.py runserver
+```
 
 <h3> O que aprendi:</h3>
     <p>
