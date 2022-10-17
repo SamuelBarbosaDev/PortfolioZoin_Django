@@ -1,0 +1,95 @@
+{% extends 'core/index.html' %}
+{% load static %}
+{% block title %}Detalhes{% endblock %}
+{% block content %}
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>{{detalhes.titulo}}</h2>
+              <p>{{detalhes.frase}}</p>
+  
+              <a class="cta-btn" href="{% url 'contatos' %}">Fale comigo</a>
+  
+            </div>
+          </div>
+        </div>
+      </div><!-- End Page Header -->    
+
+     <!-- ======= Gallery Single Section ======= -->
+     <section id="gallery-single" class="gallery-single">
+        <div class="container">
+  
+          <div class="position-relative h-100">
+            <div class="slides-1 portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+  
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-8.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-9.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-10.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-11.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-12.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/gallery/gallery-13.jpg' %}" alt="">
+                </div>
+  
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+  
+          </div>
+  
+          <div class="row justify-content-between gy-4 mt-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-description">
+                <h2>{{detalhes.titulo}}</h2>
+                <p>
+                  {{detalhes.descrição}}
+                </p>
+  
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    {{detalhes.depoimento_do_cliente}}
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <div>
+                    <img src="{{detalhes.imagem_do_cliente}}" class="testimonial-img" alt="">
+                    <h3>{{detalhes.nome_do_cliente}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3">
+              <div class="portfolio-info">
+                <h3>Informações do projeto</h3>
+                <ul>
+                  <li><strong>Categoria:</strong> <span>{{detalhes.categoria}}</span></li>
+                  <li><strong>Cliente:</strong> <span>{{detalhes.nome_do_cliente}}</span></li>
+                  <li><strong>Data:</strong> <span>{{detalhes.data_de_criação}}</span></li>
+                  <li><strong>URL do projeto:</strong> <a href="#">{{detalhes.url_do_projeto}}</a></li>
+                  <li><a href="#" class="btn-visit align-self-start">PROJETO</a></li>
+                </ul>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Gallery Single Section -->
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'core/index.html' %}
+{% load static %}
+{% block title %}Serviços{% endblock %}
+{% block content %}
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+            <h2>Serviços</h2>
+            <p>{{sobre.frase}}</p>
+
+            <a class="cta-btn" href="contact.html">Fale Comigo.</a>
+
+            </div>
+        </div>
+        </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+
+        <div class="section-header">
+            <h2>Preços</h2>
+            <p>Meus preços</p>
+        </div>
+
+        <div class="row gy-4 gx-lg-5">
+            {% for servico in servicos %}
+            <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+                <h3>{{servico.categoria}}</h3>
+                <h4>R${{servico.preco}}</h4>
+            </div>
+            </div><!-- End Pricing Item -->
+            {% endfor %}
+           
+        </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+
+        <div class="section-header">
+            <h2>Depoimentos</h2>
+            <p>O que estão dizendo</p>
+        </div>
+
+        <div class="slides-3 swiper">
+            <div class="swiper-wrapper">
+
+            {% for depoimento in depoimentos %}
+
+            <div class="swiper-slide">
+                <div class="testimonial-item">
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                    {{depoimento.depoimento_do_cliente}}
+                </p>
+                <div class="profile mt-auto">
+                    <img src="{{depoimento.imagem_do_cliente.url}}" class="testimonial-img" alt="">
+                    <h3>{{depoimento.nome_do_cliente}}</h3>
+                </div>
+                </div>
+            </div><!-- End testimonial item -->
+
+            {% endfor %}
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+{% endblock %}
