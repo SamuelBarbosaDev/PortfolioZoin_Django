@@ -12,6 +12,7 @@
     </p>
     
 <h3>Como Funciona:</h3>
+
 - Crie um ambiente virtual
 ```
 python -m venv venv
